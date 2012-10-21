@@ -1,0 +1,77 @@
+name: Market
+version: 0.9.9b
+main: me.Chryb.Market.Market
+author: Chryb
+website: http://rested.de/
+database: true
+commands:
+   market:
+      description: Market Global Commands.
+      usage: /market [args]
+      aliases: m
+   shop:
+      description: Shop Commands.
+      usage: /shop [args]
+   amount:
+      description: Amount Command.
+      usage: /amount [amount]
+      aliases: a
+permissions:
+   Market.*:
+      description: Gives Access to ALL Market Permissions.
+      default: op
+      children:
+         Market.reload: true
+         Market.help: true
+         Market.shop.account.normal: true
+         Market.shop.account.admin: true
+   Market.shop.package.user:
+      description: USER - Package with all Commands for a normal user.
+      default: op
+      children:
+         Market.cmd.shop.amount: true
+         Market.cmd.shop.help: true
+         Market.cmd.shop.create.normal: true
+         Market.cmd.shop.delete: true
+         Market.cmd.shop.set.purchase: true
+         Market.cmd.shop.set.retail: true
+   Market.shop.package.admin:
+      description: ADMIN - Package with all Commands for an admin.
+      default: op
+      children:
+         Market.cmd.shop.amount: true
+         Market.cmd.shop.help: true
+         Market.cmd.shop.create.admin: true
+         Market.cmd.shop.create.normal: true
+         Market.cmd.shop.delete: true
+         Market.cmd.shop.set.purchase: true
+         Market.cmd.shop.set.retail: true
+         Market.cmd.shop.set.type: true
+         Market.cmd.shop.set.owner: true
+         Market.shop.chest.access: true
+   Market.cmd.reload:
+      default: op
+   Market.cmd.help:
+      default: op
+   Market.shop.chest.access:
+      default: op
+   Market.cmd.shop.amount:
+      default: op
+   Market.cmd.shop.help:
+      default: op
+   Market.tools.itemFrameSelection:
+      default: op
+   Market.cmd.shop.create.admin:
+      default: op
+   Market.cmd.shop.create.normal:
+      default: op
+   Market.cmd.shop.delete:
+      default: op
+   Market.cmd.shop.set.purchase:
+      default: op
+   Market.cmd.shop.set.retail:
+      default: op
+   Market.cmd.shop.set.type:
+      default: op
+   Market.cmd.shop.set.owner:
+      default: op
